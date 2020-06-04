@@ -17,3 +17,33 @@ $(function () {
 
 
 });
+// Вызов модального окна
+$('.popup-link').click(function () {
+   $('#popup').fadeIn();
+});
+
+// Закрытие окна на крестик
+$('.close-popup').click(function () {
+   $('#popup').fadeOut();
+   
+});
+
+// Закрытие окна на поле
+$(document).mouseup(function (e) {
+   var popup = $('.popup__content');
+   if (e.target != popup[0] && popup.has(e.target).length === 0) {
+      $('.popup').fadeOut();
+   }
+});
+
+// Вызов модального окна
+$('.popup__button').click(function () {
+   $('.done').fadeIn();
+});
+
+
+
+// Закрытие окна на крестик
+$('.done-close').click(function () {
+   $('.done').fadeOut();
+});
